@@ -5,63 +5,14 @@ Robert made some last-minute updates to the review.thm website before heading of
 sudo nano /etc/hosts
 10.201.13.226 review.thm
 
-Scan
+Port Scan
 
 rustscan -a 10.201.13.226 -- -sV -sC -oN Sequence-scan.txt
 
-Nmap 7.95 scan initiated Sun Sep 21 06:48:33 2025 as: /usr/lib/nmap/nmap --privileged -vvv -p 22,80 -4 -sV -sC -oN Sequence-scan.txt 10.201.13.226
-Nmap scan report for review.thm (10.201.13.226)
-Host is up, received timestamp-reply ttl 61 (0.26s latency).
-Scanned at 2025-09-21 06:48:33 EDT for 16s
 
-PORT STATE SERVICE REASON VERSION
-22/tcp open ssh syn-ack ttl 61 OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
-| 3072 34:1e:e0:14:9a:60:3c:da:de:25:dd:1d:96:a1:60:31 (RSA)
-| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+...KM=
-| 256 84:be:3e:fe:68:31:e9:51:3e:b1:ad:09:75:37:7f:da (ECDSA)
-| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFNj...
-| 256 c6:9f:63:34:a3:38:df:aa:94:b1:e0:37:4d:57:e6:ae (ED25519)
-|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKIUxC0ybPtqSHPMe0xQn5ngkm7VBdD4UmMv6+tr8b00
-80/tcp open http syn-ack ttl 61 Apache httpd 2.4.41 ((Ubuntu))
-|http-server-header: Apache/2.4.41 (Ubuntu)
-|http-title: Review Shop
-| http-methods:
-| Supported Methods: GET HEAD POST OPTIONS
-| http-cookie-flags:
-| /:
-| PHPSESSID:
-| httponly flag not set
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-Read data files from: /usr/share/nmap
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-
-Nmap done at Sun Sep 21 06:48:49 2025 -- 1 IP address (1 host up) scanned in 16.02 seconds
 Gobuster (directory enumeration)
 
-===============================================================
-Gobuster v3.8
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
-[+] Url: http://review.thm//
-[+] Method: GET
-[+] Threads: 10
-[+] Wordlist: /usr/share/wordlists/dirb/common.txt
-[+] Negative Status codes: 404
-[+] User Agent: gobuster/3.8
-[+] Timeout: 10s
-Starting gobuster in directory enumeration mode
-/.hta (Status: 403) [Size: 275]
-/.htpasswd (Status: 403) [Size: 275]
-/.htaccess (Status: 403) [Size: 275]
-/index.php (Status: 200) [Size: 1694]
-/javascript (Status: 301) [Size: 313] [--> http://review.thm/javascript/]
-/mail (Status: 301) [Size: 307] [--> http://review.thm/mail/]
-/phpmyadmin (Status: 301) [Size: 313] [--> http://review.thm/phpmyadmin/]
-/server-status (Status: 403) [Size: 275]
-/uploads (Status: 301) [Size: 310] [--> http://review.thm/uploads/]
-Progress: 4613 / 4613 (100.00%)
-Finished
+gobuster dir -u http://review.thm// -w /usr/share/wordlists/dirb/common.txt
 
 <img width="1276" height="722" alt="image" src="https://github.com/user-attachments/assets/ff1f8723-f3e0-47ef-960a-7b748578d365" />
 
